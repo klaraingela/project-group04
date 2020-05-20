@@ -43,7 +43,7 @@ body{
   width: 300px;
   height: 40px;
   align-self: center;
-  border-radius: 20px;
+  border-radius: 10px;
   background-color: transparent;
   border: 1px solid white;
   text-align: center;
@@ -53,12 +53,40 @@ body{
 
 }
 
+.search-button{
+  display: flex;
+  justify-content: center;
+
+
+}
+
+.search-button button{
+  height: 45px;
+  width: 50px;
+  margin-top: 30px;
+  margin-left: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: #B22222;
+  color: white;
+  border: none;
+  font-size: 20px;
+}
+
+.movies{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .card {
   /* Add shadows to create the "card" effect */
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
-  width: 400px;
+  width: 20%;
   height: auto;
+
+  padding: 10px
 }
 
 .card h4{
@@ -67,7 +95,7 @@ body{
 }
 
 .card img{
-  width: 400px;
+  width: 100%;
   height: auto;
 }
 
@@ -86,4 +114,11 @@ body{
 .container img{
   width: 50px;
   height: auto;
+  cursor: pointer;
+}
+
+.movies{
+  display: flex;
+  flex-direction:row;
+
 }
