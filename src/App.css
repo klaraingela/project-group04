@@ -89,7 +89,7 @@ body{
   padding: 10px
 }
 
-.card h4{
+.container h4{
   color: white;
   flex-grow: 1;
 }
@@ -113,7 +113,7 @@ body{
 
 .container img{
   width: 50px;
-  height: auto;
+  height: 50px;
   cursor: pointer;
 }
 
