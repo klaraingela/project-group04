@@ -9,7 +9,6 @@ function Navbar(){
       <h1>My Movies</h1>
       <div>
         <a>Search Movies</a>
-        <a>new movie</a>
         <a>My Movies</a>
       </div>
     </div>
