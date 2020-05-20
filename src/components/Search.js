@@ -1,18 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import './App.css';
+import './Search.css';
 
 
-function Navbar(){
-  return(
-    <div className="navbar">
-      <h1>My Superheroes</h1>
-      <div>
-        <a>Search Superheroes</a>
-        <a>Saved Heroes</a>
-      </div>
-    </div>
-  );
-}
 
 
 function Search(props){
@@ -20,6 +9,7 @@ function Search(props){
 
   const search= event =>{
     if(input.length > 0){
+      console.log(props.getMovies);
       props.getMovies(input);
     }else{
       alert("Please enter input")
@@ -112,7 +102,7 @@ function AllMovies(props){
 
 
 
-function App(){
+function SearchApp(){
   var [data, setData] = React.useState([]);
 
   const getMovies = async (title) =>{
@@ -157,7 +147,7 @@ function App(){
 
   return (
     <main>
-      <Navbar/>
+
       <Search getMovies={getMovies} />
       <AllMovies movies={data}/>
     </main>
@@ -166,4 +156,4 @@ function App(){
   );
 }
 
-export default App;
+export default SearchApp;

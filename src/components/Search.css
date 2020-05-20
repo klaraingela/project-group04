@@ -1,6 +1,6 @@
 
 body{
-  background: url(background.jpg)
+  background: url(../background.jpg)
 }
 
 .navbar{
@@ -12,6 +12,10 @@ body{
   color: white;
   text-decoration: none;
   font-size: 25px
+}
+
+.navbar a:hover{
+  color: #B22222;
 }
 
 .navbar div{
@@ -26,6 +30,7 @@ body{
   flex-grow: 2;
   color: white;
   margin-left: 100px;
+  cursor: default;
 }
 
 .search-input{
@@ -37,6 +42,7 @@ body{
 .search-input h1{
   color: white;
   text-align: center;
+  cursor: default;
 }
 
 .search-input input{
