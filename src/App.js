@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 
 
@@ -26,12 +26,13 @@ function Search(props){
     }
     setInput("");
   }
-
   return(
     <div className="search-input">
       <h1>Search among 8485739 movies</h1>
       <div className="search-button">
-        <input placeholder="Search" onChange={event=>setInput(event.target.value)} value={input}></input>
+        <input placeholder="Search" onChange={event=>setInput(event.target.value)}
+          value={input} onKeyPress={event => {if (event.key === 'Enter') {search()}}}>
+        </input>
         <button onClick={search}>Go</button>
       </div>
 
@@ -43,8 +44,21 @@ function Search(props){
 function Movie(props){
   var movieUrl = props.movie.thumbnail.path +'.'+ props.movie.thumbnail.extension;
   var [starSrc, setStarSrc] = React.useState("star_hollow.png");
+  var currentStorage = JSON.parse(localStorage.getItem("heroes"));
+  if(currentStorage === null) {
+    currentStorage = [];
+  }
+  //LADDA RÄTT STJÄRNOR
+  useEffect(() => {
+    for(var i = 0; i < currentStorage.length; i++) {
+      if(props.movie.id === currentStorage[i].id) {
+        setStarSrc("star.png");
+        break;
+      }
+    }
+  });
 
-
+  //Toggle stjärnor
   const toggleStar = event => {
     currentStorage = JSON.parse(localStorage.getItem("heroes"));
     if(currentStorage === null) {
@@ -52,22 +66,20 @@ function Movie(props){
     }
     if(starSrc === "star_hollow.png") {
       setStarSrc("star.png");
-      var currentStorage = currentStorage.concat(props.movie);
+      currentStorage = currentStorage.concat(props.movie);
       var stored = JSON.stringify(currentStorage);
       console.log("aktuell logg" + currentStorage);
       localStorage.setItem("heroes", stored);
 
-    } else {
+    }else {
+      setStarSrc("star_hollow.png");
       for(var i = 0; i < currentStorage.length; i++) {
         if(props.movie.id === currentStorage[i].id) {
           currentStorage.splice(i, 1);
           localStorage.setItem("heroes", JSON.stringify(currentStorage));
           break;
         }
-
       }
-      setStarSrc("star_hollow.png");
-
     }
   }
 
@@ -84,14 +96,12 @@ function Movie(props){
 }
 
 function AllMovies(props){
-    var movies;
-    if(props.movies.length === 0 || props.movies.length === undefined){
-      alert("No result");
-    }else{
+    var movies = "";
+    if(props.movies.length > 0){
         movies = props.movies.map(movie => {
-        return (
-            <Movie movie={movie}/>
-        );
+          return (
+              <Movie movie={movie}/>
+            );
       });
     }
 
@@ -106,7 +116,8 @@ function App(){
   var [data, setData] = React.useState([]);
 
   const getMovies = async (title) =>{
-    console.log("Search: " + title);
+    //Nollställer resultat efter man tryckt på sök knapp
+    setData([]);
 
     //FILMER API
     /*
@@ -134,13 +145,13 @@ function App(){
     const response = await fetch("https://gateway.marvel.com:443/v1/public/characters?nameStartsWith="+title+"&apikey=13c9801495b19e2d9ac692bdfd0a2adc")
     const res = await response.json();
     console.log(res.data.results);
-    setData(res.data.results);
 
-    console.log("L: " + res.data.length);
-
-
-
+    if(res.data.results.length <1){
+      alert("No result");
+    }else{
+      setData(res.data.results);
     }
+  }
 
 
 
