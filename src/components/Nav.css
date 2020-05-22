@@ -1,0 +1,29 @@
+.navbar{
+  display: flex;
+  justify-content: space-around;
+}
+
+.navbar a{
+  color: white;
+  text-decoration: none;
+  font-size: 25px
+}
+
+.navbar a:hover{
+  color: #B22222;
+}
+
+.navbar div{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 30px;
+  flex-grow: 1;
+}
+
+.navbar h1{
+  flex-grow: 2;
+  color: white;
+  margin-left: 100px;
+  cursor: default;
+}

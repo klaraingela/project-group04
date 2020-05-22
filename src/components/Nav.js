@@ -1,9 +1,9 @@
 import React from 'react';
-import './Search.css';
+import './Nav.css';
 import {Link} from 'react-router-dom'
 
 
-
+/*Navigation*/
 function Navbar(){
   return(
     <div className="navbar">
