@@ -20,7 +20,7 @@ function Search(props){
 
   return(
     <div className="search-input">
-      <h1>Search among 8485739 movies</h1>
+      <h1>Search among 8485739 heroes</h1>
       <div className="search-button">
         <input placeholder="Search" onChange={event=>setInput(event.target.value)}
           value={input} onKeyPress={event => {if (event.key === 'Enter') {search()}}}>

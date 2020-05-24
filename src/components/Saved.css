@@ -1,1 +1,15 @@
 /*LÄGGA TILL STYLING PÅ TITEL FÖR SIDAN OCH ANNAT KANSKE*/
+@font-face {
+  font-family: myFirstFont;
+  src: url(Arkhip-Regular.ttf);
+}
+.saved h2 {
+  color: white;
+  margin-left: 600px;
+  font-family: myFirstFont;
+
+}
+
+.saved {
+  margin-top: 100px;
+}

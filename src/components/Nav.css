@@ -1,6 +1,7 @@
 .navbar{
   display: flex;
-  justify-content: space-around;
+  padding-left: 50px;
+
 }
 
 .navbar a{
@@ -16,14 +17,27 @@
 .navbar div{
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
   margin-top: 30px;
   flex-grow: 1;
+  margin-left: 600px;
+  font-family: myFirstFont;
+
 }
 
-.navbar h1{
-  flex-grow: 2;
-  color: white;
+.navbar #savedHeroes {
   margin-left: 100px;
+
+}
+
+.navbar #Superheroes{
   cursor: default;
+  color:red;
+  font-family: myFirstFont;
+
+}
+
+.navbar #my {
+  cursor: default;
+  color: white;
+  font-family: myFirstFont;
 }

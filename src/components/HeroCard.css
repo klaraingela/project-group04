@@ -36,6 +36,7 @@
   width: 100%;
   height: 30em;
   position: relative;
+  font-size: 14px;
 }
 
 .theBack img{
@@ -54,11 +55,13 @@
   top: 0;
   left: 0;
   width: 100%;
+
 }
 
 .theBack #backText p{
-  font-size: 20px;
+  font-size: 16px;
   cursor: default;
+  overflow-y: scroll;
 }
 
 .theBack img:hover{

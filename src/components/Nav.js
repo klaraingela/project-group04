@@ -7,10 +7,11 @@ import {Link} from 'react-router-dom'
 function Navbar(){
   return(
     <div className="navbar">
-      <h1>My Superheroes</h1>
-      <div>
+      <h1 id="my">My</h1>
+      <h1 id="Superheroes">Superheroes</h1>
+      <div id="links">
         <Link to="/">Search Superheroes</Link>
-        <Link to="/saved">Saved Heroes</Link>
+        <Link to="/saved" id="savedHeroes">Saved Heroes</Link>
       </div>
     </div>
   );
