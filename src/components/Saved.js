@@ -10,8 +10,10 @@ function SavedApp(){
     return (
       <div className="saved">
         <h2>My favourite heroes</h2>
-        <HeroCard heroes={superheroes}/>
+        <div id='herocard'>
+          <HeroCard  heroes={superheroes} location={''}/>
         </div>
+      </div>
     )
 }
 

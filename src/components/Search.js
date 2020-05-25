@@ -10,11 +10,7 @@ function Search(props){
 
   //Gör sökning
   const search= event =>{
-    if(input.length > 0){
-      props.getSuerheroes(input);
-    }else{
-      alert("Please enter input")
-    }
+    props.getSuerheroes(input);
     setInput("");
   }
 
@@ -27,38 +23,51 @@ function Search(props){
         </input>
         <button onClick={search}>Go</button>
       </div>
+      <p id='res'>{props.message}</p>
     </div>
   );
 }
 
 
 
-
 function SearchApp(){
   var [data, setData] = React.useState([]);
-
+  var [message,setMessage] = React.useState('');
   const getSuerheroes = async (title) =>{
-    //Nollställer resultat efter man tryckt på sök knapp
-    setData([]);
-
-    //Marvel API
-    const response = await fetch("https://gateway.marvel.com:443/v1/public/characters?nameStartsWith="+title+"&apikey=13c9801495b19e2d9ac692bdfd0a2adc")
-    const res = await response.json();
-    console.log(res.data.results);
-
-    if(res.data.results.length <1){
-      alert("No result");
+    if(title.length < 1){
+      setMessage('Please enter input');
     }else{
+      setData([]);
+      setMessage('Loading...')
+
+      //Marvel API
+      const response = await fetch("https://gateway.marvel.com:443/v1/public/characters?nameStartsWith="+title+"&apikey=13c9801495b19e2d9ac692bdfd0a2adc");
+      const res = await response.json();
+
+      console.log(res.data.results);
+      if(res.data.results.length <1){
+        console.log('ja');
+        setMessage('No result');
+
+        //alert("No result");
+      }else{
+        setMessage('');
+      }
       setData(res.data.results);
     }
   }
 
+
   return (
-    <main>
-      <Search getSuerheroes={getSuerheroes} />
-      <HeroCard heroes={data}/>
-    </main>
+    <div>
+      <Search getSuerheroes={getSuerheroes} message={message} />
+        <div id='herocard'>
+          <HeroCard  heroes={data} location={'search'} />
+        </div>
+    </div>
   );
 }
+
+
 
 export default SearchApp;

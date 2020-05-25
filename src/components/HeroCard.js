@@ -40,7 +40,7 @@ function Hero(props){
       localStorage.setItem("heroes", stored);
     }else {
       setStarSrc("star_hollow.png");
-      setRemove('hide');
+      if(props.location === ''){setRemove('hide');};
       for(var i = 0; i < currentStorage.length; i++) {
         if(props.hero.id === currentStorage[i].id) {
           currentStorage.splice(i, 1);
@@ -69,7 +69,7 @@ function Hero(props){
       </div>
 
       <div className="theBack" onClick={() => setIsFlipped(!isFlipped)} alt="background" >
-        <img src="marvel.png"></img>
+        <img src="marvel.png" alt='marvel'></img>
         <div id="backText">
           <h1>{props.hero.name}</h1>
           <p>{des}</p>
