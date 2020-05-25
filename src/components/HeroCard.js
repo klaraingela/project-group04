@@ -86,7 +86,7 @@ function AllHeroes(props){
     if(props.heroes.length > 0){
       heroes = props.heroes.map(hero => {
         return (
-            <Hero hero={hero} key={hero.id}/>
+            <Hero hero={hero} key={hero.id} location={props.location}/>
           );
       });
     }
