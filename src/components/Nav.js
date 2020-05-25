@@ -13,8 +13,8 @@ function Navbar(){
       </div>
 
       <div id="links">
-        <Link to="/">Search Superheroes</Link>
-        <Link to="/saved" id="savedHeroes">Saved Heroes</Link>
+      <div><Link to="/" id="searchHeroes">Search Superheroes</Link></div>
+      <div><Link to="/saved" id="savedHeroes">Saved Heroes</Link></div>
       </div>
     </div>
   );
