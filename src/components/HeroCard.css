@@ -71,6 +71,8 @@
   width: 100%;
   position: relative;
   overflow-y: scroll;
+  height: auto;
+  background: url('marvel.png');
 
 }
 
@@ -78,6 +80,7 @@
   width: 100%;
   height: auto;
   border-radius: 10px;
+  opacity: 0%;
 }
 
 .theBack #backText{
@@ -87,14 +90,12 @@
   top: 0;
   left: 0;
   width: 100%;
-
-
 }
 
 .theBack #backText p{
   font-size: 16px;
   cursor: default;
-  overflow-y: scroll;
+
 }
 
 .theBack img:hover{
@@ -106,7 +107,7 @@
   height: auto;
   border-radius: 10px;
   opacity: 70%;
-  max-height: inherit;
+  max-height: 600px;
 
 }
 

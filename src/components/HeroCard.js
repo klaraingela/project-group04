@@ -5,7 +5,7 @@ import React, {useEffect} from 'react';
 /*KORT FÖR EN HJÄLTE*/
 function Hero(props){
   const [isFlipped, setIsFlipped] = React.useState(false)
-  var heroUrl = props.hero.thumbnail.path +'.'+ props.hero.thumbnail.extension;
+  var heroUrl = props.hero.thumbnail.path + '/standard_fantastic' +'.'+ props.hero.thumbnail.extension;
   var [starSrc, setStarSrc] = React.useState("star_hollow.png");
   var [remove, setRemove] = React.useState('');
   var currentStorage = JSON.parse(localStorage.getItem("heroes"));
@@ -69,7 +69,7 @@ function Hero(props){
       </div>
 
       <div className="theBack" onClick={() => setIsFlipped(!isFlipped)} alt="background" >
-        <img src="marvel.png" alt='marvel'></img>
+        <img src="marvel_background.png" alt='marvel'></img>
         <div id="backText">
           <h1>{props.hero.name}</h1>
           <p>{des}</p>
