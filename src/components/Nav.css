@@ -1,18 +1,6 @@
-/*Phone
-@media screen and (max-width: 600px) {
 
-  .navbar  {
-    flex-direction: column;
-  }
 
-  #links {
-    flex-direction: column;
-  }
-
-}
-*/
-
-/*Tablet*/
+/*Tablet + phone */
 @media screen and (max-width: 900px ) {
 
   .navbar #links {
@@ -32,10 +20,9 @@
   #savedHeroes {
     align-self: center;
     margin-left: 50px;
-    text-decoration: underline;
-
   }
-  #searchHeroes {
+
+  .navbar a:hover{
     text-decoration: underline;
   }
 
@@ -48,9 +35,8 @@
   }
 
 }
-
+/*Desktop*/
 @media screen and (min-width: 900px) {
-
   .navbar #links {
     flex-grow: 1;
     justify-content: flex-end;
@@ -59,8 +45,6 @@
   #searchHeroes {
     margin-right: 20px;
   }
-
-
 }
 
 .navbar{
@@ -68,7 +52,6 @@
   margin-top: 40px;
   margin-left: 40px;
   margin-right: 40px;
-
 }
 
 .navbar a{
@@ -87,13 +70,6 @@
 
 
 }
-
-/*
-.navbar #savedHeroes {
-  margin-left: 100px;
-}
-*/
-
 
 .navbar #Superheroes{
   cursor: default;

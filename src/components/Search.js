@@ -16,7 +16,7 @@ function Search(props){
 
   return(
     <div className="search-input">
-      <h1>Search among 8485739 heroes</h1>
+      <h1>Search among 8485 characters</h1>
       <div className="search-button">
         <input placeholder="Search" onChange={event=>setInput(event.target.value)}
           value={input} onKeyPress={event => {if (event.key === 'Enter') {search()}}}>
@@ -49,7 +49,6 @@ function SearchApp(){
         console.log('ja');
         setMessage('No result');
 
-        //alert("No result");
       }else{
         setMessage('');
       }
